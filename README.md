@@ -1,8 +1,7 @@
-<h1>Curso de Java Script  -  Entrega final</h1>
-<h2>CoderHouse - Comisión 86620</h2>
+<h1>Curso de Java Script  -  Carlos A. Santa Cruz</h1>
+<h2>CoderHouse - Entrega final - Comisión 86620</h2>
 
 
-Carlos A. Santa Cruz<br>
 Profesor: Julio Avantt<br>
 Adjunto o tutor: Alexis Coronel<br>
 Abril de 2025<br>
@@ -11,16 +10,16 @@ Abril de 2025<br>
 <h3>Proyecto de Home banking </h3>
 
 
-El proyecto tiene 4 HTML <br>
-El index.html donde el usuario debe identificarse<br>
-la pag hbServicios.html que se ingresa desde el index y permite acceder a las otras dos<br>
-La pag hbCambioDeDivisas.html están implementadas con JS interactuando con HTML<br>
-la pág hbCajaDeAhorroPesos.html  que no está implementada<br>
+El proyecto tiene 4 HTML: <br>
+- El index.html es donde el usuario debe identificarse<br>
+- La pag hbServicios.html que se ingresa desde el index y permite acceder a las otras dos:<br>
+- La pag hbCambioDeDivisas.html están implementadas con JS interactuando con HTML<br>
+- La pág hbCajaDeAhorroPesos.html que no está implementada<br>
 
 
 En la entrega final se implementan las funciones de las páginas<br>
-en Java Script para cumplir los objetivos que el JS interactúe con HTML<br>
-(por ejemplo los formularios y botones de servicios)<br>
+en Java Script para cumplir la consigna:
+- Que el JS interactúe con HTML, por ejemplo los formularios y botones de servicios<br>
 - Se usa la librería luxon.js para colocar la fecha al pié de página.<br>
 - Se usa la librería sweetalert2 para mostrar los mensajes de error en el formulario de identificacion.<br>
 - Se leen archivos .json para simular la lectura de una DB, tanto para usuarios como para monedas.<br> 
@@ -39,9 +38,8 @@ Los usuarios posibles son:<br>
 Debe hacer click en el botón "Continuar"<br>
 
 
-Si se verifica que son correctos<br>
-Una variable de sessionStorage se carga con el nombre de usuario<br>
-y se accede a la pag de los servicios<br>
+Si se verifica que son correctos, una variable de sessionStorage se carga <br>
+con el nombre de usuario y se accede a la pag de los servicios<br>
 y si son incorrectos da un mensaje de error<br>
 
 Luego, en todas las paginas se verifica que exista un usuario identificado.<br>
