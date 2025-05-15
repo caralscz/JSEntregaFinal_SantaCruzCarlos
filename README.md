@@ -1,10 +1,10 @@
 <h1>Curso de Java Script  -  Carlos A. Santa Cruz</h1>
-<h2>CoderHouse - Entrega final - Comisión 86620</h2>
+<h2>CoderHouse - Entrega final - Comisión 86620 - 2025</h2>
 
 
 Profesor: Julio Avantt<br>
 Adjunto o tutor: Alexis Coronel<br>
-Abril de 2025<br>
+Mayo de 2025<br>
 
 
 <h3>Proyecto de Home banking </h3>

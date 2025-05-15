@@ -89,6 +89,8 @@ function CalcularCambioDivisas() {
     // salvo que el usuario haga click en la funcion de salida
     event.preventDefault(); // Evita que el formulario se envíe
 
+    MensajeDeAvisoOkConSweetAlert(mensajeFinal,TodoBien)
+
 } // fin de la función CalcularCambioDivisas()
 // =========================================================
 
@@ -117,7 +119,25 @@ function LeerValoresDelFormulario() {
     // 4. Calcular el resultado final de la operación
     return (calcularResultado(monedaElegida, tipoOperacion, cantidad));
 }
+   
+// mensaje de aviso al usuario con la librería SweetAlert2
+// lo muestra cuando puede realizar un cambio de divisas
+function MensajeDeAvisoOkConSweetAlert(mensaje,ok) {
+    let iconVal = ok ? "info" : "error" ;
+    let colorVal = ok ? "#000099" : "#990000" ;
+    Swal.fire({
+        title: 'Cambio de divisas a realizar',
+        html:mensaje,
+        icon:iconVal,  // warning, error, success, info, and question,
+        theme: 'dark', // tema de la ventana: 'light', 'dark', 'auto', and 'borderless'
+        background: colorVal,  //'#000099', // color de fondo
+        position: 'top-end', // posición de la ventana: 'top', 'top-start', 'top-end', 'center', 'center-start', 'center-end', 'bottom', 'bottom-start', and 'bottom-end' 
+        draggable: true,  // se puede mover el mensaje con el mouse
+        confirmButtonText: 'ok'
+    });
 
+} // Fin de la funcion MensajeDeAvisoOkConSweetAlert
+    
 // =========================================================
 //
 // Verificar si hay un usuario activo

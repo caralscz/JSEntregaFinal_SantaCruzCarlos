@@ -51,7 +51,8 @@
                 <form action="./pages/hbServicios.html" method="get" id="idFormularioIdentificacion">
                     <label for="idNombreUsuario">Nombre de usuario:</label>
                     <input type="text" id="idNombreUsuario" name="idNombreUsuario" placeholder="u1" required>
-                    <img src="./assets/img/questionmarkcircleoutline_110819.png" class="iconoAyuda" alt="Ayuda" title="Ayuda"><br>
+                    <img src="./assets/img/questionmarkcircleoutline_110819.png" class="iconoAyuda" alt="Ayuda"
+                        title="Ayuda"><br>
                     <label for="idClave">Clave:</label>
                     <input type="password" id="idClave" name="idClave" placeholder="p1" required><br>
                     <label for="idRecuerdame">Recuerdame</label>
@@ -63,59 +64,63 @@
                     <p id="idError3" class="error">Error al leer la DB de divisas. </p><br>
                 </form>
             </div>
-            
+
         </section>
 
         <section class="contenedorAviso" id="idcontenedorAviso">
-            <h2>CoderHouse Java Script <br> Comisión 86620 - año 2025</h2>
-            <p>Carlos A. santa Cruz </p>
-            <p>Profesor: Julio Avantt </p>
-            <p>Adjunto o tutor: Alexis Coronel </p>
+            <h2>Curso de Java Script - Carlos A. Santa Cruz</h2>
+            <h3>CoderHouse - Entrega final - Comisión 86620 - 2025</h3>
             <br>
-            <p>Proyecto de Home banking - <b>Entrega final</b> </p>
+            <p>Profesor: Julio Avantt</p>
+            <p>Adjunto o tutor: Alexis Coronel</p>
+            <p>Mayo de 2025</p>
             <br>
-            <p>Se implementan las funciones de estas páginas </p>
-            <p>para cumplir los objetivos de la entrega. </p>
+            <p>
+            <h3>Proyecto de Home banking </h3>
+            </p>
             <br>
-            <p>Se usa la librer&iacute;a luxon.js para colocar la fecha al pi&eacute; de p&aacute;gina.</p>
-            <p>Se usa la librer&iacute;a sweetalert2 para mostrar los mensajes de error en el formulario de identificacion.</p>
-            <p>Se leen archivos .json , tanto para usuarios como para monedas. </p>
+            <p>El proyecto tiene 4 HTML: </p>
+            <p>- El index.html es donde el usuario debe identificarse</p>
+            <p>- La pag hbServicios.html que se ingresa desde el index y permite acceder a las otras dos:</p>
+            <p>- La pag hbCambioDeDivisas.html están implementadas con JS interactuando con HTML</p>
+            <p>- La pág hbCajaDeAhorroPesos.html que no está implementada</p>
             <br>
-            <p>Las funciones en Java Script: </p>
-            <p> </p>
-            <p>En todas las paginas se verifica que exista un usuario identificado.</p>
-            <p>Una variable de sessionStorage se carga cuando pasa por index.html</p>
+            <p>En la entrega final se implementan las funciones de las páginas</p>
+            <p>en Java Script para cumplir la consigna:</p>
+            <p>- Que el JS interactúe con HTML, por ejemplo los formularios y botones de servicios</p>
+            <p>- Se usa la librería luxon.js para colocar la fecha al pié de página.</p>
+            <p>- Se usa la librería sweetalert2 para mostrar los mensajes de error en el formulario de identificacion.
+            </p>
+            <p>- Se leen archivos .json para simular la lectura de una DB, tanto para usuarios como para monedas. </p>
+            <p>- Se usan variables de sessionStorage para guardar el usuario identificado ylos archivos .json leidos
+                para ser utilizado durante toda la session.</p>
+            <br>
+            <p>Servicios implementados: Cambio de divisas</p>
+            <p>Con los elementos leídos de un archivo .json armamos la página de "Cambio de divisas"</p>
+            <br>
+            <p>En la página inicial el usuario debe identificarse para ingresar a los servicios</p>
+            <p>Allí pide un nombre de usuario y password válidos</p>
+            <br>
+            <p>Los usuarios posibles son:</p>
+            <p>"u1", "p1"</p>
+            <p>"usuario1", "password1"</p>
+            <p>"usuario2", "password2"</p>
+            <p>Debe hacer click en el botón "Continuar"</p>
+            <br>
+            <p>Si se verifica que son correctos, una variable de sessionStorage se carga </p>
+            <p>con el nombre de usuario y se accede a la pag de los servicios</p>
+            <p>y si son incorrectos da un mensaje de error</p>
+            <br>
+            <p>Luego, en todas las paginas se verifica que exista un usuario identificado.</p>
             <p>Si no se verifica, lo redireccionamos a inicio.html para que se identifique</p>
             <br>
-            <p>En index.html pedirá un nombre de usuario y password válidos </p>
-            <p>Los usuarios, password y Nombre de usuario v&aacute;lidos fueron cargados</p>
-            <p>en un archivo .json para simular la lectura de una DB</p>
-            <p>Los usuarios posibles son: </p>
-            <p>&nbsp;&nbsp;&nbsp;"u1", "p1" </p>
-            <p>&nbsp;&nbsp;&nbsp;"usuario1", "password1" </p>
-            <p>&nbsp;&nbsp;&nbsp;"usuario2", "password2"</p>
-            <p>&nbsp;&nbsp;&nbsp;"usuario3", "password3"</p>
+            <p>Nota: En los formularios no pude utilizar metodo POST, por ese motivo</p>
+            <p>utilizé método GET que muestra los datos </p>
             <br>
-            <p>Con Javascript se verifica que sean correctos </p>
-            <p>Si son correctos nos vamos a ver los servicios del Home Banking </p>
-            <p>y si son incorrectos se muestra un mensaje de Error </p>
-            <br>
-            <p>En index.html, al ingresar por primera vez, se carga la tabla de usuarios</p>
-            <p>en una sessionStorage para ser utilizado durante toda la session </p>
-            <br>
-            <p>Las divisas posibles, como así los valores de compra y ventas se</p>
-            <p>cargaron en un archivo .json para simular la lectura de una DB</p>
-            <p>Con los elementos le&iacute;dos en el .json armamos la p&aacute;gina de "Cambio de divisas</p>
-            <p>-</p>
-            <p>-</p>
-            <p>-</p>
-            <p>-</p>
-            <p></p>
-            <p></p>
-            <p></p>
-            <p></p>
-            <p></p>
-
+            <p>Desde Servicios podrá ingresar : </p>
+            <p>- Función de Cambio de divisas es la que está implementada y</p>
+            <p>- Función de Caja de ahorro que está pendiente de implementación</p>
+            <br><br><br><br>
 
         </section>
     </main>
@@ -136,11 +141,14 @@
         </div>
 
     </footer>
+            <br><br><br><br>
+            <br><br><br><br>
+            <br><br><br><br><p>.</p>
 
     <!-- Libreria de Luxon para fecha y hora -->
     <script src="https://moment.github.io/luxon/global/luxon.js"></script>
     <!-- Libreria de sweetalert para coartel de aviso -->
-    <script src="./js/sweetalert2.all.min.js"></script> 
+    <script src="./js/sweetalert2.all.min.js"></script>
 
     <!-- Mis Java Script -->
     <script src="./js/fechaYhoraLuxon.js">  </script>

@@ -239,7 +239,7 @@ function ControlarUsuarioPassword() {
 } // Fin de la función ControlarUsuarioPassword
 // ======================================================== 
 
-// mensaje de error al usuario con Se usa la librería SweetAlert2
+// mensaje de error al usuario con la librería SweetAlert2
 // lo muestra cuando el usuario y/o la password son incorrectos
 function MensajeDeSweetAlert() {
     Swal.fire({
@@ -255,7 +255,7 @@ function MensajeDeSweetAlert() {
 
 } // Fin de la funcion MensajeDeSweetAlert
 
-// mensaje de error al usuario con Se usa la librería SweetAlert2
+// mensaje de error al usuario con la librería SweetAlert2
 // lo muestra cuando el usuario y/o la password son incorrectos
 function MensajeDeAyudaConSweetAlert() {
     Swal.fire({

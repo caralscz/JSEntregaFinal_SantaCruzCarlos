@@ -1,6 +1,6 @@
 @charset "UTF-8";
 /* 
-Estilos para el sitio Home Banking 
+Estilos para el sitio Home Banking con SASS
 Coder house  JavaScript Comisión 86620
 Del 27/02/2025 al 16/05/2025 - Jueves  19:00 a 21:00h
 Profe: Julio Avantt Adjunto o tutor: Alexis Coronel
@@ -38,6 +38,8 @@ a {
 /* scss del _body.scss  */
 html {
   background-image: url("../assets/img/unplash-com-jonathan-castaneda-Q_GoPxj3YMc-unsplash.jpg");
+  /* background-position: center center;  Para centrar la imagen */
+  background-attachment: fixed; /* Para que la imagen no haga scroll con la pagina */
   background-repeat: no-repeat; /* Evita la repetición de la imagen */
   background-size: cover; /* Escala la imagen para cubrir todo el fondo */
 }

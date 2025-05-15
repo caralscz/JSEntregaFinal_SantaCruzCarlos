@@ -80,4 +80,24 @@ function verificaUsuarioActivo(){
         usuarioIdentificado.innerHTML ="Usuario: " + sessionStorage.getItem(clNombrePersona);  // coloco el nombre del usuario bajo el titulo // UsuarioActivo;
     } // fin de la función TratarUsuarioActivo()
     // =========================================================
+
+    
+// mensaje de aviso al usuario con la librería SweetAlert2
+// lo muestra cuando oprime el botón de "Depositar" o "Transferir"
+function MensajeDeAvisoConSweetAlert() {
+    Swal.fire({
+        title: 'Funciones a implementar proximamente',
+        html: `       
+        Por ahora solo implementamos "Cambio de divisas"<br>
+        <a href="../pages/hbCambioDeDivisas.html" class="UnBoton">Ir a cambio de divisas</a>
+        `,
+        icon: "info",  // warning, error, success, info, and question,
+        theme: 'dark', // tema de la ventana: 'light', 'dark', 'auto', and 'borderless'
+        background: '#000099', // color de fondo
+        position: 'top-end', // posición de la ventana: 'top', 'top-start', 'top-end', 'center', 'center-start', 'center-end', 'bottom', 'bottom-start', and 'bottom-end' 
+        draggable: true,  // se puede mover el mensaje con el mouse
+        confirmButtonText: 'ok'
+    });
+
+} // Fin de la funcion MensajeDeAvisoConSweetAlert
     

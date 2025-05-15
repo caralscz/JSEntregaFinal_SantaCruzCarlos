@@ -8,15 +8,10 @@
 
 html{
     background-image: url("../assets/img/unplash-com-jonathan-castaneda-Q_GoPxj3YMc-unsplash.jpg");
-    //url("../assets/img/unplash-com-nemo--m9n5yMcKWg-unsplash.jpg");
-    // Foto de <a href="https://unsplash.com/es/@nemo765?utm_content=creditCopyText&utm_medium=referral&utm_source=unsplash">nemo</a> en <a href="https://unsplash.com/es/fotos/un-objeto-rosado-con-una-apariencia-distorsionada-y-borrosa--m9n5yMcKWg?utm_content=creditCopyText&utm_medium=referral&utm_source=unsplash">Unsplash</a>     
-    
-    //url("../assets/img/unsplash-com-ingmar-h-Urr7MbStFL8-4.jpg");
-    //url("../assets/img/unplash-com-jonathan-castaneda-Q_GoPxj3YMc-unsplash.jpg");
-                      
+    /* background-position: center center;  Para centrar la imagen */
+    background-attachment: fixed; /* Para que la imagen no haga scroll con la pagina */
     background-repeat: no-repeat; /* Evita la repetición de la imagen */
     background-size: cover; /* Escala la imagen para cubrir todo el fondo */
-    // background-position: center center; /* Centra la imagen en el fondo */
 }
 body {
     /*27.5rem=440px*/
