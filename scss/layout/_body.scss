@@ -1,0 +1,92 @@
+/* scss del _body.scss  */
+// max-width: Limita el ancho máximo de un elemento.
+// min-width: Establece el ancho mínimo de un elemento.
+// los colores están en ./utilities/_variables.scss
+// Notas:         
+//      border: 1px solid black; 
+//      padding: 20px; 
+
+html{
+    background-image: url("../assets/img/unplash-com-jonathan-castaneda-Q_GoPxj3YMc-unsplash.jpg");
+    //url("../assets/img/unplash-com-nemo--m9n5yMcKWg-unsplash.jpg");
+    // Foto de <a href="https://unsplash.com/es/@nemo765?utm_content=creditCopyText&utm_medium=referral&utm_source=unsplash">nemo</a> en <a href="https://unsplash.com/es/fotos/un-objeto-rosado-con-una-apariencia-distorsionada-y-borrosa--m9n5yMcKWg?utm_content=creditCopyText&utm_medium=referral&utm_source=unsplash">Unsplash</a>     
+    
+    //url("../assets/img/unsplash-com-ingmar-h-Urr7MbStFL8-4.jpg");
+    //url("../assets/img/unplash-com-jonathan-castaneda-Q_GoPxj3YMc-unsplash.jpg");
+                      
+    background-repeat: no-repeat; /* Evita la repetición de la imagen */
+    background-size: cover; /* Escala la imagen para cubrir todo el fondo */
+    // background-position: center center; /* Centra la imagen en el fondo */
+}
+body {
+    /*27.5rem=440px*/
+    min-width: 27.5rem;//440px 
+    /*62rem=992px*/  
+    max-width: 62rem; //992px
+    // background-color: $colorFondo;
+};
+
+
+/* como estilo usamos class(contenedor contenedorMain) */
+.contenedor {  
+        margin-top: .625rem;    /* 10px */
+        // antes:  margin-top: 0%; 
+
+        /* el color del backgrund */
+        background-color:$backgroundColorContenedor; 
+        
+        /* centramos el bloque */
+        margin-left: auto; /* Establece el margen izquierdo automático */
+        margin-right: auto; /* Establece el margen derecho automático */
+        //width: 80%; /* Ocupa el 80% del ancho del viewport (pantalla) */
+        //max-width: 80%; /* Ancho máximo para evitar que se estire demasiado en pantallas grandes */      
+}
+
+/*  el contenedor del header  */
+/* como estilo usamos class(contenedor contenedorHeader) */
+.contenedorHeader{ 
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    border-top-right-radius: .625rem; /* 10px */
+    border-top-left-radius: .625rem; /* 10px */
+    /*margin-top: 0%;*/
+    /* flex: 0 1 auto;  Mantiene el tamaño natural de cada contenedor */
+
+    padding: 20px; 
+    text-align: center;
+        p{
+            font-size: 1.2rem;  /*19px*/
+            font-weight: 500;
+            color: $textColorNormal; 
+            font-style: italic;
+        }
+        h1 {
+            font-weight: 700;
+            color: $textColorNormal;
+        } 
+}
+
+
+/*  el contenedor del Main  */
+/* como estilo usamos class(contenedor contenedorMain) */
+.contenedorMain{
+    /* el color del backgrund del Main */
+   background-color: $backgroundColorMenu;
+}
+
+/*  el contenedor del footer  */
+/* como estilo usamos class(contenedor contenedorFooter) */
+.contenedorFooter {
+    bottom: 0;
+    left: 0;
+    right: 0;
+    display: flex;
+    flex-direction: row;
+    flex: 0 1 auto;
+    border-bottom-left-radius: .625rem; /* 10px */
+    border-bottom-right-radius: .625rem; /* 10px */ 
+    /* lo modificamos en _media576.scss y en _media440.scss */
+}
+
+

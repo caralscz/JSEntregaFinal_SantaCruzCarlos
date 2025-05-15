@@ -1,0 +1,38 @@
+/*  media 48rem = 768px  de  _media768.scss 
+  min-width: Define un límite inferior para el ancho de la pantalla.
+            Es decir que desde ese ancho en adelante se aplicará el estilo. 
+    Se aplica cuando el ancho de la pantalla es igual o mayor a 48rem = 768px
+    Es decir, se activa para 48rem y para valores mayores.
+    Se aplica si el ancho es 48rem, 49rem, 62rem, 63rem, 70rem, etc.
+
+    @media : el orden para aplicar es 440;576;768;992
+
+   Nota: 
+      si se usara max-width es al revés (ver Nota en _media992.scss),
+*/
+
+@media (min-width:  48rem) {
+  /* 
+    media min-width: 48rem = 768px, esto se aplica desde los 768px en adelante
+    Nota: en 992px definimos el siguiente @media 
+  */
+  
+  /* no lo definimos aún */
+  .headerNav { // no definido aún
+    div {
+      ul {
+        flex-direction: row;
+        gap: 1.25rem; //20px
+        //   background-color: yellow;  //para ver el espacio que ocupa
+      }
+    }
+  }
+
+  .contenedor {
+    // definido en _body.scss
+    // dejo mas margen a los costados
+    max-width: 95%;
+  }
+ 
+}
+/* fin  media 48rem = 768px  de  _media768.scss   */

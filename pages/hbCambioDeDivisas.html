@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- 
+    Estudiando Java Script | CoderHouse Entrega final | Home Banking | 2025
+    Desarrollado por Carlos A. santa Cruz
+    Comisión 86620 - Del 27/02/25 al 16/05/25 - Jueves 19:00 a 21:00h
+    Profesor CoderHouse : Julio Avantt
+    Adjunto o tutor CoderHouse: Alexis Coronel
+     -->
+
+    <!-- favicon, icono de la aplicación : Fachada de un banco -->
+    <link rel="icon" href="../banco.ico" type="image/x-icon">
+
+    <title>Estudiando JS | CoderHouse entrega02 | Home Banking | Cambio de divisas </title>
+
+    <!-- Mis estilos -->
+    <link rel="stylesheet" href="../css/style.css">
+</head>
+
+<body>
+    <header class="contenedor  contenedorHeader">
+        <h1>
+            <img src="../assets/img/LogoHB2.png" class="imgHB" alt="Home banking logo">
+            La nostra banca - <span class="Hb_titulo_servicio">Cambio de divisas</span>
+        </h1>
+        <div>
+            <a href="../index.html" class="UnBoton">Inicio</a>
+            <a href="./hbServicios.html" class="UnBoton">A servicios</a>
+        </div>
+    </header>
+
+    <main class="contenedor contenedorMain">
+
+        <section class="UsuarioIdentificado" id="idUsuarioIdentificado">
+            <p>Usuario no identificado</p>
+        </section>
+
+        <section class="contenedorCambioDivisas">
+            <h2>Cambio de divisas</h2>
+
+            <div class="cambioDivisas">
+                <!-- 
+                aqui insertamos las diferentes divisas disponibles para operar
+                en el home banking.
+                se cargan desde la function agregarNuevaDivisa()
+                que se encuentra en el archivo hbCambioDivisas.js
+                -->
+            </div>
+
+            <div>
+                <form action="#" method="get" id="idFormCambioDivisas">
+                    <br>
+                    <p class="formMonedaAOperar"> <strong>Moneda a operar</strong> </p>
+                    <!-- 
+                    aqui insertamos las diferentes divisas disponibles para operar
+                    en el home banking.
+                    se cargan desde la function agregarNuevaDivisa()
+                    que se encuentra en el archivo hbCambioDivisas.js
+                    -->
+
+                    <br>
+                    <p class="formOperacionARealizar"><strong>Operaci&oacute;n a realizar</strong> </p>
+
+                    <input type="radio" id="fcd_comprar" name="fOperacionElegida" value="comprar">
+                    <label for="fcd_comprar">Comprar</label><br>
+                    <input type="radio" id="fcd_vender" name="fOperacionElegida" value="vender">
+                    <label for="fcd_vender">Vender</label><br>
+
+                    <br>
+                    <p><strong>Importe a invertir en la operaci&oacute;n</strong> </p>
+
+                    <label for="fImporteOperacion">Cantidad:&nbsp;&nbsp;</label>
+                    <input type="text" id="fImporteOperacion" name="fImporteOperacion"><br>
+
+                    <br>
+                    <button type="submit" onclick="CalcularCambioDivisas();" id="id_botonCambioDivisa">&nbsp;Realizar
+                        operaci&oacute;n&nbsp;</button>
+                    <br><br>
+                    <p id="idError" class="error">Error: Debe ingresar un importe válido</p><br><br>
+                </form>
+            </div>
+
+        </section>
+    </main>
+
+    <footer class="contenedor  contenedorFooter">
+        <div class="footerDivLogo">
+            <a href="../README.md" target="_readme">
+                <img src="../assets/img/LogoHB2.png" class="imgHB" alt="Home banking logo" title="Readme Home banking">
+            </a>
+        </div>
+        <div class="footerDivTexto">
+            <p>Estudiando Java Script | CoderHouse entrega final | Home Banking | 2025</p>
+            <p>Desarrollado por Carlos A. santa Cruz © Todos los derechos reservados</p>
+            <p>Comisión 86620 - Del 27/02/25 al 16/05/25 - Jueves 19:00 a 21:00h</p>
+            <p>Profesor CoderHouse : Julio Avantt</p>
+            <p>Adjunto o tutor CoderHouse: Alexis Coronel</p>
+            <p id="fechahora"></p>
+        </div>
+    </footer>
+
+    <!-- Libreria de Luxon para fecha y hora -->
+    <script src="https://moment.github.io/luxon/global/luxon.js"></script>
+
+    <!-- Mis Java Script -->
+    <script src="../js/fechaYhoraLuxon.js">  </script>
+    <script src="../js/hbCambioDeDivisas.js"></script>
+
+</body>
+
+</html>

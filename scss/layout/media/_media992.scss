@@ -1,0 +1,42 @@
+/* media 62rem = 992px de _media992.scss  
+  min-width: Define un límite inferior para el ancho de la pantalla.
+            Es decir que desde ese ancho en adelante se aplicará el estilo. 
+    Se aplica cuando el ancho de la pantalla es igual o mayor a 62rem = 992px
+    Es decir, se activa para 62rem y para valores mayores.
+    Se aplica si el ancho es 62rem, 63rem, 70rem, 100rem, etc.
+
+    @media : el orden para aplicar es 440;576;768;992
+
+   Nota: 
+      si se usara max-width es al revés, 
+      se aplicaría para pantallas menores a 62rem = 992px: 
+      define un límite superior para el ancho de la pantalla,
+      en ese caso el orden para aplicar sería 992;768;570;440
+*/
+
+@media (min-width: 62rem) {
+  /* 
+    media min-width: 62rem = esto se aplica desde los 992px en adelante 
+  */
+  
+  /* no lo definimos aún */
+  .headerNav { // no definido aún
+    div {
+      ul {
+        flex-direction: row;
+        gap: 1.25rem; //20px
+        // background-color: rgb(221, 74, 160); // para ver el espacio que ocupa
+
+      }
+    }
+  }
+
+  .contenedor {
+    // definido en _body.scss
+    // dejo mas margen a los costados
+    /* Ancho máximo para evitar que se estire demasiado en pantallas grandes */
+    max-width: 80%;
+  }
+ 
+} 
+/* fin media 62rem = 992px de _media992.scss  */

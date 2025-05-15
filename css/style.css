@@ -1,0 +1,578 @@
+@charset "UTF-8";
+/* 
+Estilos para el sitio Home Banking 
+Coder house  JavaScript Comisión 86620
+Del 27/02/2025 al 16/05/2025 - Jueves  19:00 a 21:00h
+Profe: Julio Avantt Adjunto o tutor: Alexis Coronel
+
+Entrega final - 2025
+
+Los elementos que tengan las class="" debe empezar con . (punto) 
+y los elemento que tengan el id="" deben empezar con # (numeral) 
+
+reset de CSS de los elementos de default que aplican los navegadores 
+
+// Nota: la práctica de SASS en clase puedo verla en 
+//       D:\papa\VisualStudioProyects\Coderhouse\01_DesarrolloWeb_63295\03_PracticoNro3_Enero6_2025\css
+//       sass --watch ./scss/style.scss ./css/style.css
+
+// los @import se debe colocar en orden de uso
+// tener siempre presente que se leerán y ejeutarán en el orden que pongamos
+*/
+/* textos */
+/* #333333 */
+/* éste es el código scss de _reset.scss  */
+* {
+  margin: 0 auto;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+}
+
+/* y otras propiedades a nivel general */
+a {
+  text-decoration: none;
+}
+
+/* fin del código scss de _reset.scss  */
+/* scss del _body.scss  */
+html {
+  background-image: url("../assets/img/unplash-com-jonathan-castaneda-Q_GoPxj3YMc-unsplash.jpg");
+  background-repeat: no-repeat; /* Evita la repetición de la imagen */
+  background-size: cover; /* Escala la imagen para cubrir todo el fondo */
+}
+
+body {
+  /*27.5rem=440px*/
+  min-width: 27.5rem;
+  /*62rem=992px*/
+  max-width: 62rem;
+}
+
+/* como estilo usamos class(contenedor contenedorMain) */
+.contenedor {
+  margin-top: 0.625rem; /* 10px */
+  /* el color del backgrund */
+  background-color: rgb(193, 248, 193);
+  /* centramos el bloque */
+  margin-left: auto; /* Establece el margen izquierdo automático */
+  margin-right: auto; /* Establece el margen derecho automático */
+}
+
+/*  el contenedor del header  */
+/* como estilo usamos class(contenedor contenedorHeader) */
+.contenedorHeader {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  border-top-right-radius: 0.625rem; /* 10px */
+  border-top-left-radius: 0.625rem; /* 10px */
+  /*margin-top: 0%;*/
+  /* flex: 0 1 auto;  Mantiene el tamaño natural de cada contenedor */
+  padding: 20px;
+  text-align: center;
+}
+.contenedorHeader p {
+  font-size: 1.2rem; /*19px*/
+  font-weight: 500;
+  color: black;
+  font-style: italic;
+}
+.contenedorHeader h1 {
+  font-weight: 700;
+  color: black;
+}
+
+/*  el contenedor del Main  */
+/* como estilo usamos class(contenedor contenedorMain) */
+.contenedorMain {
+  /* el color del backgrund del Main */
+  background-color: rgb(193, 248, 193);
+}
+
+/*  el contenedor del footer  */
+/* como estilo usamos class(contenedor contenedorFooter) */
+.contenedorFooter {
+  bottom: 0;
+  left: 0;
+  right: 0;
+  display: flex;
+  flex-direction: row;
+  flex: 0 1 auto;
+  border-bottom-left-radius: 0.625rem; /* 10px */
+  border-bottom-right-radius: 0.625rem; /* 10px */
+  /* lo modificamos en _media576.scss y en _media440.scss */
+}
+
+/* =========================================== 
+*
+* 
+*    Estilos para el Header                      
+* 
+*
+*  =========================================== */
+.headerDivLogo, .headerDivIngresar {
+  display: flex; /* Activa flexbox para los elementos dentro del div */
+  align-items: center; /* Alinea verticalmente el p y la img  */
+  justify-content: flex-end; /* Alinea los elementos a la derecha */
+}
+
+.imgHB {
+  /* el icono del banco en el H1 */
+  width: 3.125rem; /* 50px */
+  margin-right: 0.625rem;
+  margin-left: 0.625rem;
+  border-radius: 0.625rem;
+}
+
+.imgIngresarHB {
+  /* el icono de ingresar */
+  height: 1.5625rem; /*25px */
+  margin-right: 0.625rem;
+  margin-left: 0.625rem;
+}
+
+.Hb_titulo_servicio {
+  font-size: 1.1875rem; /*19px*/
+  font-style: italic;
+}
+
+/* =========================================== 
+*
+*
+* Estilos para el Main en todas las páginas
+*
+*
+*  =========================================== */
+.UsuarioIdentificado {
+  text-align: right;
+  font-size: 0.6875rem; /* 11px */
+  font-weight: 500;
+  font-style: italic;
+  color: rgb(168, 214, 168); /*va a desaparecer lo que se escriba, es para el puntito abajo*/
+}
+
+.UsuarioIdentificado:first-of-type {
+  color: black; /* el primer elemento no se va a borrar, es el nombre del usuario */
+}
+
+/* =========================================== 
+*
+*
+* Estilos para el Main del index.html
+*
+*
+*  =========================================== */
+.contenedorIdentificacion {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  margin-top: 1rem;
+  padding: 1rem;
+  border: 0.0625rem solid black;
+  border-radius: 1rem;
+  background-color: rgb(168, 214, 168); /* el color del backgrund */
+  width: 100%;
+  margin-bottom: 1rem;
+}
+
+#formularioIdentificacion {
+  /* flex: 0 1 auto;     Mantiene el tamaño natural de cada contenedor */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  margin-top: 1rem;
+  padding: 1rem;
+  border-radius: 1rem;
+  background-color: rgb(168, 214, 168); /* el color del backgrund */
+  width: 80%;
+  margin-left: 10%;
+  margin-right: 10%;
+  margin-bottom: 1rem;
+}
+
+#idNombreUsuario, #idClave {
+  color: black;
+  font-size: 0.75rem; /* 12px */
+  font-style: italic;
+}
+
+.error {
+  color: red;
+  font-size: 1.2rem; /*19px*/
+  font-style: italic;
+  display: none;
+}
+
+.iconoAyuda {
+  width: 1rem; /* 16px */
+}
+
+.contenedorAviso {
+  display: flex;
+  flex-direction: column;
+  margin-top: 1rem;
+  padding: 1rem;
+  border: 0.0625rem solid black;
+  border-radius: 1rem;
+  background-color: rgb(168, 214, 168);
+  width: 100%;
+  margin-bottom: 1rem;
+}
+.contenedorAviso p {
+  display: block;
+  text-align: left;
+  align-self: flex-start;
+  width: 100%;
+  margin-left: 3rem;
+  margin-right: 3rem;
+}
+
+/* =========================================== 
+*
+*
+* Estilos para el Main de Cambio de divisas                 
+*
+*
+*  =========================================== */
+.contenedorCambioDivisas {
+  background-color: rgb(168, 214, 168);
+  border: 0.0625rem solid black;
+  border-radius: 1rem;
+  padding: 1rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  margin-top: 1rem;
+  margin-bottom: 1rem;
+  width: 100%;
+}
+.contenedorCambioDivisas .cambioDivisas {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  width: 100%;
+  margin-top: 1rem;
+  padding: 1rem;
+  /* border: .0625rem solid black;
+  border-radius: 1rem; */
+  background-color: rgb(168, 214, 168);
+}
+
+/* =========================================== 
+*
+*
+* Estilos para el Main de Caja de Ahorro                  
+*
+*
+*  =========================================== */
+.contenedorCajaAhorro {
+  background-color: rgb(168, 214, 168);
+  border: rgb(51, 51, 51) solid 0.0625rem; /* 1px */
+  border-radius: 0.625rem; /* 10px */
+  padding-bottom: 0.3125rem; /* 5px Espacio interno para que no quede pegado al borde */
+  /* width: 100%;     */
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: 6rem 8rem 8rem; /* 96px 128px 128px  las filas */
+  column-gap: 1.25rem; /* Espacio entre las columnas 20px */
+  row-gap: 1.25rem; /* Espacio entre las filas 20px */
+  grid-template-areas: "header header" "sidebar main1" "sidebar main2";
+}
+
+/* grid-template-areas: permite nombrar áreas dentro de la grilla para 
+facilitar el posicionamiento de los elementos hijos. 
+Se usan nombres de áreas definidos en los elementos hijos.*/
+.MsgBienvenida {
+  grid-area: header;
+}
+
+.ParaImagenPublicidad {
+  grid-area: sidebar;
+}
+
+.columnaDerecha1 {
+  grid-area: main1;
+}
+
+.columnaDerecha2 {
+  grid-area: main2;
+}
+
+.MsgBienvenida {
+  color: rgb(103, 61, 201);
+  font-size: 0.9375rem; /*15px*/
+  font-style: italic;
+  margin-top: 1rem;
+  margin-bottom: 1rem;
+  text-align: left;
+}
+
+/* .contenedorservicios > div > div:first-child img  */ /* Selecciona la imagen dentro del primer div */
+.imagenPublicidad {
+  background-color: salmon;
+  border: 2px solid rgb(240, 240, 240); /* Borde de la imagen */
+  width: 100%; /* Ancho del contenedor de las dos columnas (ajusta según necesites) */
+  max-width: 100%; /* Ancho máximo para evitar que se estire demasiado en pantallas grandes */
+  height: auto; /* Altura automática para mantener la proporción de la imagen */
+  max-height: 100%;
+  /*   height: 100%;
+  max-height: 100%;
+  width: auto; */
+  /* width: 100%;  */ /* Ancho del contenedor de las dos columnas (ajusta según necesites) */
+  /* max-width: 100%; */ /* Ancho máximo para evitar que se estire demasiado en pantallas grandes */
+  /* height: auto; */ /* Altura automática para mantener la proporción de la imagen */
+}
+
+.columnaDerecha1 {
+  background-color: rgb(168, 214, 168);
+  /* margin-right: 20px; */ /* Espacio entre la columna de la imagen y las cajas de ahorro */
+}
+
+.columnaDerecha2 {
+  background-color: rgb(168, 214, 168);
+  /* margin-right: 20px;  */ /* Espacio entre la columna de la imagen y las cajas de ahorro */
+  /*display: flex;*/ /* Para organizar las cajas de ahorro en una fila */
+  /*flex-direction: column; */ /* Apila verticalmente las cajas de ahorro */
+}
+
+/* =========================================== 
+*
+*
+* Estilos para el Main de Servicios                 
+*
+*
+*  =========================================== */
+.contenedorservicios {
+  /* width: 38rem;  */ /* Ancho del contenedor de las dos columnas (ajusta según necesites) */
+  display: flex; /* Para centrar el título y organizar el resto */
+  background-color: rgb(168, 214, 168);
+  padding: 0rem; /* Espacio interno para que no quede pegado al borde */
+  flex-direction: column; /* Para que los elementos internos se apilen verticalmente inicialmente */
+  align-items: center; /* Centra horizontalmente los elementos */
+  border: rgb(51, 51, 51) solid 0.0625rem; /* 1px */
+  border-radius: 0.625rem; /* 10px */
+}
+
+.contenedorservicios h2 {
+  text-align: left;
+  margin-bottom: 20px; /* Espacio entre el título y las columnas */
+}
+
+.contenedorservicios > div { /* Selecciona el div que contiene la imagen y las cajas de servicio */
+  display: flex; /* Para crear las dos columnas */
+  width: 80%; /* Ancho del contenedor de las dos columnas (ajusta según necesites) */
+}
+
+.contenedorservicios > div > div:first-child { /* Selecciona el primer div dentro del contenedor de las dos columnas (la imagen) */
+  flex: 1; /* Ocupa la misma proporción de espacio que la otra columna */
+  display: flex; /* Centra la imagen dentro de su contenedor */
+  justify-content: center;
+  align-items: center;
+  padding-right: 10px; /* Espacio entre la imagen y la columna de botones */
+}
+
+/* .contenedorservicios > div > div:first-child img  */ /* Selecciona la imagen dentro del primer div */
+.imagenPublicidadServicio {
+  border: 2px solid rgb(240, 240, 240); /* Borde de la imagen */
+  background-color: salmon;
+  width: 100%; /* Ancho del contenedor de las dos columnas (ajusta según necesites) */
+  max-width: 100%; /* Ancho máximo para evitar que se estire demasiado en pantallas grandes */
+  height: auto; /* Altura automática para mantener la proporción de la imagen */
+  /* height: 100%; */
+  /* max-height: 100%; */ /* Ancho máximo para evitar que se estire demasiado en pantallas grandes */
+  /* width: auto;  */ /* Ancho del contenedor de las dos columnas (ajusta según necesites) */
+}
+
+.cajaServicio { /* Selecciona el div con la clase cajaServicio (los botones) */
+  flex: 1; /* Ocupa la misma proporción de espacio que la columna de la imagen */
+  display: flex;
+  flex-direction: column; /* Para que los enlaces se apilen verticalmente */
+  justify-content: center; /* Centra verticalmente los botones */
+  padding-left: 1.25rem; /* 20px Espacio entre la columna de la imagen y los botones */
+}
+
+.cajaServicio div { /* Estilos para cada div que contiene un enlace */
+  margin-bottom: 1.25rem; /* 20px Espacio entre los botones */
+}
+
+.UnBoton { /* Estilos para los enlaces (opcional, si quieres darles un estilo específico) */
+  display: block; /* Para que ocupen todo el ancho de su contenedor */
+  padding: 0.625rem 0.9375rem; /* Espacio interno para que no quede pegado al borde */
+  text-decoration: none;
+  background-color: rgb(240, 240, 240);
+  color: rgb(51, 51, 51);
+  border: 1px solid rgb(204, 204, 204);
+  border-radius: 0.3125rem; /* 5px */
+  text-align: center;
+}
+
+.UnBoton:hover { /* Estilos al pasar el ratón */
+  background-color: rgb(221, 221, 221);
+}
+
+/* =========================================== */
+/**/
+/* Estilos para el footer                      */
+/* En el curso html en scss ver _footer.scss    */
+/**/
+/* =========================================== */
+.footerDivLogo {
+  width: 20%;
+  align-content: space-around;
+  /* flex: 0 1 auto;     Mantiene el tamaño natural de cada contenedor */
+  text-align: left;
+  /* // Centra la imagen horizontalmente dentro de su contenedor */
+}
+.footerDivLogo img {
+  /* el icono de la izquierda del pie de pagina */
+  width: 5.5rem;
+  /* //88px */
+  border-radius: 0.625rem;
+  /* //10px */
+  opacity: 0.7;
+  /* // Ajusta el valor de opacidad entre 0 y 1 */
+  margin: 0.3rem;
+  /* // 4.8px */
+}
+
+.footerDivTexto {
+  text-align: left;
+  font-size: 0.75rem;
+  /* // 12px; */
+  max-width: 80%;
+}
+
+/* media 27.5rem = 440px de _media440.scss  
+    min-width: Define un límite inferior para el ancho de la pantalla.
+            Es decir que desde ese ancho en adelante se aplicará el estilo. 
+    Se aplica cuando el ancho de la pantalla es igual o mayor a 27.5rem = 440px
+    Es decir, se activa para 27.5rem y para valores mayores.
+    Se aplica si el ancho es 27.5rem, 37rem, 62rem, 63rem, 70rem, etc.
+
+    @media : el orden para aplicar es 440;576;768;992
+
+   Nota: 
+      si se usara max-width es al revés (ver Nota en _media992.scss),
+*/
+@media (min-width: 27.5rem) {
+  /*
+      media min-width: 27.5rem = 440px, esto se aplica desde los 440px hasta 576px  
+      donde definimos el siguiente @media 
+  */
+  /* no lo definimos aún */
+  .headerNav div ul {
+    flex-direction: column;
+    text-align: left;
+    margin: 0.01rem;
+    gap: 0rem;
+  }
+  .contenedor {
+    max-width: 95%;
+  }
+  /*  el contenedor del footer  */
+  /* como estilo usamos class(contenedor contenedorFooter) */
+  .contenedorFooter {
+    flex-direction: column;
+    /* lo modificamos en _media576.scss y en _media440.scss */
+  }
+}
+/* fin del  _media440.scss  */
+/* media 36rem = 576px de _media576.scss 
+  min-width: Define un límite inferior para el ancho de la pantalla.
+            Es decir que desde ese ancho en adelante se aplicará el estilo. 
+    Se aplica cuando el ancho de la pantalla es igual o mayor a 36rem = 576px
+    Es decir, se activa para 36rem y para valores mayores.
+    Se aplica si el ancho es 36rem, 37rem, 62rem, 63rem, 70rem, etc.
+
+    @media : el orden para aplicar es 440;576;768;992
+
+   Nota: 
+      si se usara max-width es al revés (ver Nota en _media992.scss),
+*/
+@media (min-width: 36rem) {
+  /* 
+    media min-width:  36rem = 576px esto se aplica desde los 576px en adelante
+    Nota: en 768px definimos el siguiente @media 
+  */
+  /* no lo definimos aún */
+  .headerNav div ul {
+    flex-direction: row;
+    gap: 1.25rem;
+  }
+  .contenedor {
+    max-width: 95%;
+  }
+  /* se usa en la pagina de Caja de Ahorros */
+  .cajaCajaAhorro {
+    overflow-wrap: break-word;
+  }
+  /*  el contenedor del footer  */
+  /* como estilo usamos class(contenedor contenedorFooter) */
+  .contenedorFooter {
+    flex-direction: row;
+    /* lo modificamos en _media576.scss y en _media440.scss */
+  }
+}
+/*  media 48rem = 768px  de  _media768.scss 
+  min-width: Define un límite inferior para el ancho de la pantalla.
+            Es decir que desde ese ancho en adelante se aplicará el estilo. 
+    Se aplica cuando el ancho de la pantalla es igual o mayor a 48rem = 768px
+    Es decir, se activa para 48rem y para valores mayores.
+    Se aplica si el ancho es 48rem, 49rem, 62rem, 63rem, 70rem, etc.
+
+    @media : el orden para aplicar es 440;576;768;992
+
+   Nota: 
+      si se usara max-width es al revés (ver Nota en _media992.scss),
+*/
+@media (min-width: 48rem) {
+  /* 
+    media min-width: 48rem = 768px, esto se aplica desde los 768px en adelante
+    Nota: en 992px definimos el siguiente @media 
+  */
+  /* no lo definimos aún */
+  .headerNav div ul {
+    flex-direction: row;
+    gap: 1.25rem;
+  }
+  .contenedor {
+    max-width: 95%;
+  }
+}
+/* fin  media 48rem = 768px  de  _media768.scss   */
+/* media 62rem = 992px de _media992.scss  
+  min-width: Define un límite inferior para el ancho de la pantalla.
+            Es decir que desde ese ancho en adelante se aplicará el estilo. 
+    Se aplica cuando el ancho de la pantalla es igual o mayor a 62rem = 992px
+    Es decir, se activa para 62rem y para valores mayores.
+    Se aplica si el ancho es 62rem, 63rem, 70rem, 100rem, etc.
+
+    @media : el orden para aplicar es 440;576;768;992
+
+   Nota: 
+      si se usara max-width es al revés, 
+      se aplicaría para pantallas menores a 62rem = 992px: 
+      define un límite superior para el ancho de la pantalla,
+      en ese caso el orden para aplicar sería 992;768;570;440
+*/
+@media (min-width: 62rem) {
+  /* 
+    media min-width: 62rem = esto se aplica desde los 992px en adelante 
+  */
+  /* no lo definimos aún */
+  .headerNav div ul {
+    flex-direction: row;
+    gap: 1.25rem;
+  }
+  .contenedor {
+    /* Ancho máximo para evitar que se estire demasiado en pantallas grandes */
+    max-width: 80%;
+  }
+}
+/* fin media 62rem = 992px de _media992.scss  */
+
+/*# sourceMappingURL=style.css.map */

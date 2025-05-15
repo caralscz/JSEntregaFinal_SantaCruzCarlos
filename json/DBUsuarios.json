@@ -1,0 +1,77 @@
+{   "_comment": "Con este archivo JSON simulo datos de una DB de usuarios y sus productos de un banco.",
+    "productos": [
+        {
+            "persona": "Ludwig van Beethoven", 
+            "usuario": "u1",
+            "clave": "p1",
+            "cajaAhorro": true,
+            "cuentaCorriente": false, 
+            "PlazoFijo": false,
+            "cambioDivisa": true
+        },
+        {
+            "persona": "Johann Sebastian Bach",
+            "usuario": "u2",
+            "clave": "p2",
+            "cajaAhorro": true,
+            "cuentaCorriente": false, 
+            "PlazoFijo": false,
+            "cambioDivisa": true
+        },
+        {
+            "persona": "Wolfgang Amadeus Mozart ",
+            "usuario": "usuario1",
+            "clave": "password1",
+            "cajaAhorro": true,
+            "cuentaCorriente": false, 
+            "PlazoFijo": false,
+            "cambioDivisa": true
+        },
+        {
+            "persona": "Frédéric François Chopin",
+            "usuario": "usuario2",
+            "clave": "password2",
+            "cajaAhorro": true,
+            "cuentaCorriente": false, 
+            "PlazoFijo": false,
+            "cambioDivisa": true
+        },
+        {
+            "persona": "Claude Debussy",
+            "usuario": "usuario3",
+            "clave": "password3",
+            "cajaAhorro": true,
+            "cuentaCorriente": false, 
+            "PlazoFijo": false,
+            "cambioDivisa": true
+        },
+        {
+            "persona": "Igor Stravinsky",
+            "usuario": "usuario4",
+            "clave": "password4",
+            "cajaAhorro": true,
+            "cuentaCorriente": false, 
+            "PlazoFijo": false,
+            "cambioDivisa": true
+        },
+        {
+            "persona": "Johannes Brahms",
+            "usuario": "usuario5",
+            "clave": "password5",
+            "cajaAhorro": true,
+            "cuentaCorriente": false, 
+            "PlazoFijo": false,
+            "cambioDivisa": true
+        },
+        {
+            "persona": "Richard Wagner",
+            "usuario": "usuario6",
+            "clave": "password6",
+            "cajaAhorro": true,
+            "cuentaCorriente": false, 
+            "PlazoFijo": false,
+            "cambioDivisa": true
+        }
+    ]
+}
+

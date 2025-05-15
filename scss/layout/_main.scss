@@ -1,0 +1,295 @@
+
+/* =========================================== 
+*
+*
+* Estilos para el Main en todas las páginas
+*
+*
+*  =========================================== */
+  
+.UsuarioIdentificado{
+    text-align: right;
+    font-size: .6875rem;    /* 11px */
+    font-weight: 500;
+    font-style: italic;
+    color: $backgroundColorFormulario;  /*va a desaparecer lo que se escriba, es para el puntito abajo*/
+}
+
+.UsuarioIdentificado:first-of-type{
+    color: $textColorNormal;     /* el primer elemento no se va a borrar, es el nombre del usuario */
+}
+/* =========================================== 
+*
+*
+* Estilos para el Main del index.html
+*
+*
+*  =========================================== */
+.contenedorIdentificacion{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin-top: 1rem;
+    padding: 1rem;
+    border: .0625rem solid $textColorNormal;
+    border-radius: 1rem;
+    background-color: $backgroundColorFormulario; /* el color del backgrund */
+    width: 100%;
+    // margin-left: 10%;//25%;
+    // margin-right: 10%;//25%;
+    margin-bottom: 1rem;
+}
+#formularioIdentificacion{
+    /* flex: 0 1 auto;     Mantiene el tamaño natural de cada contenedor */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin-top: 1rem;
+    padding: 1rem;
+    // border: 1px solid $textColorNormal;
+    border-radius: 1rem;
+    background-color: $backgroundColorFormulario; /* el color del backgrund */
+    width: 80%;//50%;
+    margin-left: 10%;//25%;
+    margin-right: 10%;//25%;
+    margin-bottom: 1rem;
+}
+#idNombreUsuario, #idClave{
+    color: $textColorNormal;
+    font-size: .75rem;   /* 12px */
+    font-style: italic;
+}
+.error{
+    color: $textColorError;
+    font-size: 1.2rem;  /*19px*/
+    font-style: italic;
+    display: none;
+}
+
+.iconoAyuda{
+  width:1rem  ; /* 16px */
+  
+  //height:1rem  ; /* 16px */
+}
+ 
+.contenedorAviso {
+    display: flex;
+    flex-direction: column;
+    // align-items:flex-start;
+    // justify-content: center; 
+    margin-top: 1rem;
+    padding: 1rem;
+    border: .0625rem solid $textColorNormal;
+    border-radius: 1rem;
+    background-color: $backgroundColorFormulario;
+    width: 100%;
+    //margin-left: 10%;// 25%;
+    // margin-right: 10%;//25%;
+    margin-bottom: 1rem;
+    
+    // text-align:left ;
+    p {
+      display:block; // contents ;
+      text-align: left;
+      align-self: flex-start; // Esto alinea cada párrafo al inicio (izquierda)
+      width: 100%; // Esto asegura que ocupen todo el ancho disponible
+      margin-left: 3rem;
+      margin-right: 3rem;
+    } 
+}
+
+
+/* =========================================== 
+*
+*
+* Estilos para el Main de Cambio de divisas                 
+*
+*
+*  =========================================== */
+
+.contenedorCambioDivisas{
+  background-color: $backgroundColorFormulario;
+  border: .0625rem solid $textColorNormal;
+  border-radius: 1rem;
+  
+  padding: 1rem;
+  
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  margin-top: 1rem;
+  margin-bottom: 1rem;
+  width: 100%;
+    // margin-left: 10%;
+    // margin-right: 10%;
+  .cambioDivisas{
+        display: flex;
+        flex-direction: row;
+        justify-content: space-around;
+        width: 100%;
+        margin-top: 1rem;
+        padding: 1rem;
+        /* border: .0625rem solid black;
+        border-radius: 1rem; */
+        background-color: $backgroundColorFormulario;
+    }
+}
+
+
+/* =========================================== 
+*
+*
+* Estilos para el Main de Caja de Ahorro                  
+*
+*
+*  =========================================== */
+
+  .contenedorCajaAhorro {
+    background-color: $backgroundColorFormulario; 
+    border: $textColorBoton solid 0.0625rem; /* 1px */
+    border-radius: 0.625rem; /* 10px */
+
+    padding-bottom: .3125rem; /* 5px Espacio interno para que no quede pegado al borde */
+
+    /* width: 100%;     */
+    display: grid;
+    grid-template-columns: 1fr 1fr ;
+    grid-template-rows: 6rem 8rem 8rem; /* 96px 128px 128px  las filas */
+    column-gap: 1.25rem; /* Espacio entre las columnas 20px */
+    row-gap: 1.25rem; /* Espacio entre las filas 20px */
+    grid-template-areas:
+        "header header"
+        "sidebar main1"
+        "sidebar main2";
+  }
+          /* grid-template-areas: permite nombrar áreas dentro de la grilla para 
+          facilitar el posicionamiento de los elementos hijos. 
+          Se usan nombres de áreas definidos en los elementos hijos.*/
+  .MsgBienvenida    {grid-area: header; }
+  .ParaImagenPublicidad {grid-area: sidebar;}
+  .columnaDerecha1  {grid-area: main1;  }
+  .columnaDerecha2  {grid-area: main2;  }
+    
+.MsgBienvenida{
+    color: $textColorMsgespecial;
+    font-size: .9375rem;  /*15px*/
+    font-style: italic;
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+    text-align:left ;
+}
+
+/* .contenedorservicios > div > div:first-child img  */ /* Selecciona la imagen dentro del primer div */
+.imagenPublicidad {
+  background-color: salmon;
+  border: 2px solid rgb(240, 240, 240); /* Borde de la imagen */
+
+  width: 100%;  /* Ancho del contenedor de las dos columnas (ajusta según necesites) */
+  max-width: 100%;  /* Ancho máximo para evitar que se estire demasiado en pantallas grandes */
+  height: auto;  /* Altura automática para mantener la proporción de la imagen */
+  max-height: 100%;
+
+  /*   height: 100%;
+  max-height: 100%;
+  width: auto; */
+
+  /* width: 100%;  *//* Ancho del contenedor de las dos columnas (ajusta según necesites) */
+  /* max-width: 100%; */ /* Ancho máximo para evitar que se estire demasiado en pantallas grandes */
+  /* height: auto; */ /* Altura automática para mantener la proporción de la imagen */
+}
+
+.columnaDerecha1 {
+  background-color: $backgroundColorFormulario; ;
+  /* margin-right: 20px; */ /* Espacio entre la columna de la imagen y las cajas de ahorro */
+}
+
+.columnaDerecha2 {
+  background-color: $backgroundColorFormulario; ;
+  /* margin-right: 20px;  *//* Espacio entre la columna de la imagen y las cajas de ahorro */
+  /*display: flex;*/ /* Para organizar las cajas de ahorro en una fila */
+  /*flex-direction: column; *//* Apila verticalmente las cajas de ahorro */
+}
+
+/* =========================================== 
+*
+*
+* Estilos para el Main de Servicios                 
+*
+*
+*  =========================================== */
+
+.contenedorservicios {
+    /* width: 38rem;  *//* Ancho del contenedor de las dos columnas (ajusta según necesites) */
+    display: flex; /* Para centrar el título y organizar el resto */
+    background-color:  $backgroundColorFormulario;// $backgroundColorMenu; 
+    padding: 0rem;   /* Espacio interno para que no quede pegado al borde */
+    flex-direction: column; /* Para que los elementos internos se apilen verticalmente inicialmente */
+    align-items: center; /* Centra horizontalmente los elementos */
+    border: $textColorBoton solid 0.0625rem; /* 1px */
+    border-radius: 0.625rem; /* 10px */
+  }
+  
+  .contenedorservicios h2 {
+    text-align:left; 
+    margin-bottom: 20px; /* Espacio entre el título y las columnas */
+  }
+  
+  .contenedorservicios > div { /* Selecciona el div que contiene la imagen y las cajas de servicio */
+    display: flex; /* Para crear las dos columnas */
+    width: 80%; /* Ancho del contenedor de las dos columnas (ajusta según necesites) */
+    //max-width: 960px; /* Ancho máximo para evitar que se estire demasiado en pantallas grandes */
+  }
+  
+  .contenedorservicios > div > div:first-child { /* Selecciona el primer div dentro del contenedor de las dos columnas (la imagen) */
+    flex: 1; /* Ocupa la misma proporción de espacio que la otra columna */
+    display: flex; /* Centra la imagen dentro de su contenedor */
+    justify-content: center;
+    align-items: center;
+    padding-right: 10px; /* Espacio entre la imagen y la columna de botones */
+  }
+  
+  /* .contenedorservicios > div > div:first-child img  */ /* Selecciona la imagen dentro del primer div */
+.imagenPublicidadServicio{
+    border: 2px solid $colorBordeImagen; /* Borde de la imagen */
+    background-color: salmon;
+  
+    width: 100%;  /* Ancho del contenedor de las dos columnas (ajusta según necesites) */
+    max-width: 100%;  /* Ancho máximo para evitar que se estire demasiado en pantallas grandes */
+    height: auto;  /* Altura automática para mantener la proporción de la imagen */
+  
+    /* height: 100%; */
+    /* max-height: 100%; */ /* Ancho máximo para evitar que se estire demasiado en pantallas grandes */
+    /* width: auto;  *//* Ancho del contenedor de las dos columnas (ajusta según necesites) */
+  
+  
+  }   
+
+  .cajaServicio { /* Selecciona el div con la clase cajaServicio (los botones) */
+    flex: 1; /* Ocupa la misma proporción de espacio que la columna de la imagen */
+    display: flex;
+    flex-direction: column; /* Para que los enlaces se apilen verticalmente */
+    justify-content: center; /* Centra verticalmente los botones */
+    padding-left: 1.25rem; /* 20px Espacio entre la columna de la imagen y los botones */
+  }
+  
+  .cajaServicio div { /* Estilos para cada div que contiene un enlace */
+    margin-bottom: 1.25rem; /* 20px Espacio entre los botones */
+  }  
+ 
+  .UnBoton { /* Estilos para los enlaces (opcional, si quieres darles un estilo específico) */
+    display: block; /* Para que ocupen todo el ancho de su contenedor */
+    padding: .625rem .9375rem; /* Espacio interno para que no quede pegado al borde */
+    text-decoration: none;
+    background-color: $colorBordeImagen;
+    color: $textColorBoton;
+    border: 1px solid $colorBordeBoton;
+    border-radius: .3125rem; /* 5px */
+    text-align: center;
+  }
+  
+  .UnBoton:hover  { /* Estilos al pasar el ratón */
+    background-color: $backgroundColorHoverBoton;
+  }

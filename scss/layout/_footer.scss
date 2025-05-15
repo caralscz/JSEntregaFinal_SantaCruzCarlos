@@ -1,0 +1,34 @@
+
+/* =========================================== */
+/**/
+/* Estilos para el footer                      */
+/* En el curso html en scss ver _footer.scss    */
+/**/
+/* =========================================== */
+
+.footerDivLogo {
+    width: 20%;
+    align-content: space-around;
+    /* flex: 0 1 auto;     Mantiene el tamaño natural de cada contenedor */
+    text-align: left;
+
+    /* // Centra la imagen horizontalmente dentro de su contenedor */
+    img {
+        /* el icono de la izquierda del pie de pagina */
+        width: 5.5rem;
+        /* //88px */
+        border-radius: 0.625rem;
+        /* //10px */
+        opacity: 0.7;
+        /* // Ajusta el valor de opacidad entre 0 y 1 */
+        margin: .3rem;
+        /* // 4.8px */
+    }
+} 
+ 
+.footerDivTexto {
+    text-align: left;
+    font-size: 0.75rem;
+    /* // 12px; */
+    max-width: 80%;
+}

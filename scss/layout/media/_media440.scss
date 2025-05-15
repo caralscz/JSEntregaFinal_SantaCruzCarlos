@@ -1,0 +1,53 @@
+  /* media 27.5rem = 440px de _media440.scss  
+    min-width: Define un límite inferior para el ancho de la pantalla.
+            Es decir que desde ese ancho en adelante se aplicará el estilo. 
+    Se aplica cuando el ancho de la pantalla es igual o mayor a 27.5rem = 440px
+    Es decir, se activa para 27.5rem y para valores mayores.
+    Se aplica si el ancho es 27.5rem, 37rem, 62rem, 63rem, 70rem, etc.
+
+    @media : el orden para aplicar es 440;576;768;992
+
+   Nota: 
+      si se usara max-width es al revés (ver Nota en _media992.scss),
+*/
+  
+  @media (min-width: 27.5rem) {
+    /*
+        media min-width: 27.5rem = 440px, esto se aplica desde los 440px hasta 576px  
+        donde definimos el siguiente @media 
+    */
+
+/* no lo definimos aún */
+.headerNav { // no definido aún 
+      div {
+        ul {
+          // flex-direction: row;
+          // text-align: right;//  left;
+          // margin: 0.01rem; //0.24px
+          // gap: 1.25rem; //20px;
+
+          flex-direction: column;
+          text-align: left;//  right;  
+          margin: 0.01rem; //0.24px
+          gap: 0rem;
+          // background-color: rgb(176, 233, 202); // para ver el espacio que ocupa
+
+        }
+      }
+    }
+
+.contenedor {
+      // definido en _body.scss
+      max-width: 95%;   // dejo menos margen a los costados
+    } // fin .contenedor
+ 
+
+/*  el contenedor del footer  */
+/* como estilo usamos class(contenedor contenedorFooter) */
+.contenedorFooter {
+  flex-direction: column;
+  /* lo modificamos en _media576.scss y en _media440.scss */
+}
+
+} // fin media 27.5rem = 440px de _media440.scss
+/* fin del  _media440.scss  */  

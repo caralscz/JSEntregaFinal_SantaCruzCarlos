@@ -1,0 +1,16 @@
+/* éste es el código scss de _reset.scss  */
+* {
+    margin: 0 auto;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif
+};
+
+
+// los colores están en ./utilities/_variables.scss
+/* y otras propiedades a nivel general */
+a {
+    text-decoration: none;
+};
+
+/* fin del código scss de _reset.scss  */

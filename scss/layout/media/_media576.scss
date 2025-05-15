@@ -1,0 +1,55 @@
+/* media 36rem = 576px de _media576.scss 
+  min-width: Define un límite inferior para el ancho de la pantalla.
+            Es decir que desde ese ancho en adelante se aplicará el estilo. 
+    Se aplica cuando el ancho de la pantalla es igual o mayor a 36rem = 576px
+    Es decir, se activa para 36rem y para valores mayores.
+    Se aplica si el ancho es 36rem, 37rem, 62rem, 63rem, 70rem, etc.
+
+    @media : el orden para aplicar es 440;576;768;992
+
+   Nota: 
+      si se usara max-width es al revés (ver Nota en _media992.scss),
+*/
+
+@media (min-width: 36rem) {
+  /* 
+    media min-width:  36rem = 576px esto se aplica desde los 576px en adelante
+    Nota: en 768px definimos el siguiente @media 
+  */
+
+  /* no lo definimos aún */
+.headerNav {
+    div {
+      ul {
+        flex-direction: row;
+        gap: 1.25rem; //20px
+        // background-color: greenyellow; // para ver el espacio que ocupa
+
+        //   flex-direction: column;
+        //   text-align: right;//  left;
+        //   margin: 0.01rem; //0.24px
+        //   gap: 0rem;
+      }
+    }
+  }
+
+.contenedor {
+    // definido en _body.scss
+    max-width: 95%; // dejo menos margen a los costados
+  }
+
+/* se usa en la pagina de Caja de Ahorros */
+.cajaCajaAhorro { 
+  overflow-wrap: break-word;  //  Rompe la palabra solo si una línea entera de palabras irrompibles desbordaría el contenedor. 
+}
+
+/*  el contenedor del footer  */
+/* como estilo usamos class(contenedor contenedorFooter) */
+.contenedorFooter {
+  flex-direction: row;
+  /* lo modificamos en _media576.scss y en _media440.scss */
+}
+
+
+
+}

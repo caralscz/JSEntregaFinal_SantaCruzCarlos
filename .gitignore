@@ -1,0 +1,12 @@
+# archivos y carpetas a ignorar por git (que no queremos subir al repositorio)
+# si el nombre finaliza con /, ignora la carpeta y todo su contenido
+# 
+# Estudiando Java Script | CoderHouse entrega final | Home Banking | 2025
+# Desarrollado por Carlos A. santa Cruz
+# Comisión 86620 - Del 27/02/25 al 16/05/25 - Jueves 19:00 a 21:00h
+# Profesor CoderHouse : Julio Avantt
+# Adjunto o tutor CoderHouse: Alexis Coronel
+#  
+# contenedor de paginas que uso de apuntes
+#
+.Apuntes/

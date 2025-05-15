@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- 
+    Estudiando Java Script | CoderHouse entrega final | Home Banking | 2025
+    Desarrollado por Carlos A. santa Cruz
+    Comisión 86620 - Del 27/02/25 al 16/05/25 - Jueves 19:00 a 21:00h
+    Profesor CoderHouse : Julio Avantt
+    Adjunto o tutor CoderHouse: Alexis Coronel
+     -->
+
+    <!-- favicon, icono de la aplicación : Fachada de un banco -->
+    <link rel="icon" href="../banco.ico" type="image/x-icon">
+
+    <title>JavaScript CoderHouse Entrega02 | Home Banking | Caja de ahorros en pesos</title>
+
+    <!-- Mis estilos -->
+    <link rel="stylesheet" href="../css/style.css">
+</head>
+
+<body>
+    <header class="contenedor  contenedorHeader">
+        <h1>
+            <img src="../assets/img/LogoHB2.png" class="imgHB" alt="Home banking logo">
+            La nostra banca <span class="Hb_titulo_servicio"> - Caja de ahorros</span>
+        </h1>
+        <div>
+            <a href="../index.html" class="UnBoton">Inicio</a>
+            <a href="./hbServicios.html" class="UnBoton">A servicios</a>
+
+        </div>
+    </header>
+
+    <main class="contenedor  contenedorMain">
+
+        <section class="UsuarioIdentificado" id="idUsuarioIdentificado">
+            <p>Usuario no identificado</p>
+        </section>
+
+        <section class="contenedorCajaAhorro">
+            <div class="MsgBienvenida ">
+                <strong>
+                    <p> Bienvenido</p>
+                    <br>
+                    <p> Proximamente en esta pagina podra realizar operaciones</p>
+                    <p> de deposito, extraccion y transferencias.</p>
+                </strong><br>
+            </div>
+
+            <div class="ParaImagenPublicidad">
+                <img src="../assets/img/HB_PeloVerdeEnDivan.png" class="imagenPublicidad" alt="El banco en su casa">
+            </div>
+
+            <div class="columnaDerecha1">
+                <h2>Caja de ahorro en pesos</h2>
+                <div class="cuentas">
+                    <h3>Caja de Ahorro en Pesos</h3>
+                    <p>Saldo: $<span id="idSaldoCajaAhorro">0</span></p>
+                    <button id="id_botonDepositarCajaAhorro">Depositar</button>
+                </div>
+            </div>
+
+            <div class="columnaDerecha2">
+                <h2>Transferencias</h2>
+                <form action="#" method="get" id="formularioTransferencias" class="formularioTransferencias">
+                    <label for="idCuentaDestino">Cuenta destino</label>
+                    <select name="cuentaDestino" id="idCuentaDestino">
+                        <option value="cajaAhorro">Caja de Ahorro en Pesos</option>
+                        <option value="cuentaCorriente">Cuenta Corriente</option>
+                    </select><br>
+                    <label for="idMonto">Monto</label>
+                    <input type="number" id="idMonto" name="txtMonto" placeholder="Ingrese el monto a transferir:"><br>
+                    <button type="submit" id="id_botonTransferirCuenta">Transferir</button><br>
+                </form>
+            </div>
+
+        </section>
+
+        <section class="UsuarioIdentificado">
+            <p>.</p>
+        </section>
+
+    </main>
+
+    <footer class="contenedor  contenedorFooter">
+        <div class="footerDivLogo">
+            <a href="../README.md" target="_readme">
+                <img src="../assets/img/LogoHB2.png" class="imgHB" alt="Home banking logo">
+            </a>
+        </div>
+        <div class="footerDivTexto">
+            <p>Estudiando Java Script | CoderHouse entrega final | Home Banking | 2025</p>
+            <p>Desarrollado por Carlos A. santa Cruz © Todos los derechos reservados</p>
+            <p>Comisión 86620 - Del 27/02/25 al 16/05/25 - Jueves 19:00 a 21:00h</p>
+            <p>Profesor CoderHouse : Julio Avantt</p>
+            <p>Adjunto o tutor CoderHouse: Alexis Coronel</p>
+            <p id="fechahora"></p>
+        </div>
+    </footer>
+
+    <!-- Libreria de Luxon para fecha y hora -->
+    <script src="https://moment.github.io/luxon/global/luxon.js"></script>
+
+    <!-- Mis Java Script -->
+    <script src="../js/fechaYhoraLuxon.js">  </script>     
+    <script src="../js/hbCajaAhorroScript.js"></script>
+
+
+</body>
+
+</html>

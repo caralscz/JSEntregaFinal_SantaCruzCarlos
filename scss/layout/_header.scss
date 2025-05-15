@@ -1,0 +1,34 @@
+
+/* =========================================== 
+*
+* 
+*    Estilos para el Header                      
+* 
+*
+*  =========================================== */
+
+.headerDivLogo, .headerDivIngresar{
+    display: flex; /* Activa flexbox para los elementos dentro del div */
+    align-items: center; /* Alinea verticalmente el p y la img  */
+    justify-content: flex-end; /* Alinea los elementos a la derecha */
+}
+
+.imgHB {
+    /* el icono del banco en el H1 */
+    width: 3.125rem;    /* 50px */
+    margin-right: .625rem;
+    margin-left: .625rem;
+    border-radius: 0.625rem;
+}
+
+.imgIngresarHB {
+    /* el icono de ingresar */ 
+    height:1.5625rem;    /*25px */
+    margin-right: .625rem;
+    margin-left: .625rem;
+}
+
+.Hb_titulo_servicio {
+    font-size: 1.1875rem;  /*19px*/
+    font-style: italic;
+}

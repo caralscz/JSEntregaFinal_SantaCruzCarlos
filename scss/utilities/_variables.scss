@@ -1,0 +1,37 @@
+// aqui declaramos las variables, las cuales contendrán c/u 
+// el valor de una propiedad 
+// El nombre de una variable siempre empieza con el signo $
+
+// 
+$backgroundColorMenu: rgb(193, 248, 193) ;//rgb(221, 188, 188);// el rosado original es el de la derecha
+$backgroundColorContenedor: rgb(193, 248, 193);//rgb(225, 252, 225);// rgb(247, 158, 158); // el rosado original es el de la derecha
+$backgroundColorFormulario: rgb(168, 214, 168);//rgb(250,230, 230); // el rosado original es el de la derecha
+
+$colorFondo: $backgroundColorMenu; //  rgb(255, 255, 255); //color de fondo de la pagina
+
+
+$colorBordeImagen: rgb(240, 240, 240);
+
+$colorBordeBoton: rgb(204, 204, 204);
+$backgroundColorHoverBoton: rgb(221, 221, 221) ;
+
+/* textos */
+$textColorNormal:black;
+$textColorSuave1:rgba(0, 0, 0, 0.514);
+$textColorError: red;
+$textAoverColor: rgb(168, 198, 241);
+$textColorMsgespecial: rgb(103,61,201); 
+$textColorBoton: rgb(51, 51, 51); /* #333333 */
+
+
+// $colorFondo: rgb(124, 174, 190);
+// $textFooterColor: rgb(233, 233, 245);
+// /* en el menu el fondo del <a:over> */
+// Código HEX	Color en RGB
+// #f0f0f0	    rgb(240, 240, 240)
+// #cccccc	    rgb(204, 204, 204)
+// #333333	    rgb(51, 51, 51)
+// #dddddd	    rgb(221, 221, 221)
+
+
+

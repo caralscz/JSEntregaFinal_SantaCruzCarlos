@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- 
+    Estudiando Java Script | CoderHouse entrega final | Home Banking | 2025
+    Desarrollado por Carlos A. santa Cruz
+    Comisión 86620 - Del 27/02/25 al 16/05/25 - Jueves 19:00 a 21:00h
+    Profesor CoderHouse : Julio Avantt
+    Adjunto o tutor CoderHouse: Alexis Coronel
+     -->
+
+    <!-- favicon, icono de la aplicación : Fachada de un banco -->
+    <link rel="icon" href="../banco.ico" type="image/x-icon">
+
+    <title>Estudiando JS | CoderHouse entrega02 | Home Banking | Servicios</title>
+
+    <!-- Mis estilos -->
+    <link rel="stylesheet" href="../css/style.css">
+</head>
+
+<body>
+    <header class="contenedor  contenedorHeader">
+        <h1>
+            <img src="../assets/img/LogoHB2.png" class="imgHB" alt="Home banking logo">
+            La nostra banca - <span class="Hb_titulo_servicio">Servicios habilitados</span>
+        </h1>
+        <div>
+            <a href="../index.html" class="UnBoton">Inicio</a>
+
+        </div>
+    </header>
+
+    <main class="contenedor  contenedorMain">
+
+        <section class="UsuarioIdentificado" id="idUsuarioIdentificado">
+            <p>Usuario no identificado</p>
+        </section>
+
+        <section class="contenedorservicios">
+            <div>
+                <div>
+                    <img src="../assets/img/HB_HombreDivan1.png" class="imagenPublicidad" alt="El banco en su casa">
+                </div>
+                <div class="cajaServicio">
+                    <h2>Servicios</h2>
+                    <div><a href="../pages/hbCambioDeDivisas.html" class="UnBoton">Cambio de divisas</a></div>
+                    <div><a href="../pages/hbCajaAhorroPesos.html" class="UnBoton">Caja de ahorro y CC</a></div>
+                </div>
+            </div>
+        </section>
+
+        <section class="UsuarioIdentificado">
+            <p>.</p>
+        </section>
+
+    </main>
+
+    <footer class="contenedor  contenedorFooter">
+        <div class="footerDivLogo">
+            <a href="../README.md" target="_readme">
+                <img src="../assets/img/LogoHB2.png" class="imgHB" alt="Home banking logo" title="Readme Home banking">
+            </a>
+        </div>
+        <div class="footerDivTexto">
+            <p>Estudiando Java Script | CoderHouse entrega final | Home Banking | 2025</p>
+            <p>Desarrollado por Carlos A. santa Cruz © Todos los derechos reservados</p>
+            <p>Comisión 86620 - Del 27/02/25 al 16/05/25 - Jueves 19:00 a 21:00h</p>
+            <p>Profesor CoderHouse : Julio Avantt</p>
+            <p>Adjunto o tutor CoderHouse: Alexis Coronel</p>
+            <p id="fechahora"></p>
+        </div>
+    </footer>
+
+    <!-- Libreria de Luxon para fecha y hora -->
+    <script src="https://moment.github.io/luxon/global/luxon.js"></script>
+
+    <!-- Mis Java Script -->
+    <script src="../js/fechaYhoraLuxon.js">  </script>
+    <script src="../js/hbServicios.js"></script>
+
+</body>
+
+</html>

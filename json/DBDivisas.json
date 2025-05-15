@@ -1,0 +1,25 @@
+{   "_comment": "Con este archivo JSON simulo datos de una DB de divisas y sus valores.",
+    "divisas": [
+            {
+            "id": "EUO",
+            "moneda": "Euro",
+            "tipo": "oficial",
+            "compra": "1290.00",
+            "venta": "1399.00"
+        },
+       {
+            "id": "USM",
+            "moneda": "Dolar",
+            "tipo": "MEP",
+            "compra": "1180.69",
+            "venta": "21182.14"
+        },
+    {
+            "id": "USO",
+            "moneda": "Dolar", 
+            "tipo": "oficial",
+            "compra": "1140.00",
+            "venta": "1190.00"
+        }
+     ]
+}

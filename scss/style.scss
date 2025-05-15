@@ -1,0 +1,39 @@
+/* 
+Estilos para el sitio Home Banking 
+Coder house  JavaScript Comisión 86620
+Del 27/02/2025 al 16/05/2025 - Jueves  19:00 a 21:00h
+Profe: Julio Avantt Adjunto o tutor: Alexis Coronel
+
+Entrega final - 2025
+
+Los elementos que tengan las class="" debe empezar con . (punto) 
+y los elemento que tengan el id="" deben empezar con # (numeral) 
+
+reset de CSS de los elementos de default que aplican los navegadores 
+
+// Nota: la práctica de SASS en clase puedo verla en 
+//       D:\papa\VisualStudioProyects\Coderhouse\01_DesarrolloWeb_63295\03_PracticoNro3_Enero6_2025\css
+//       sass --watch ./scss/style.scss ./css/style.css
+
+// los @import se debe colocar en orden de uso
+// tener siempre presente que se leerán y ejeutarán en el orden que pongamos
+*/
+
+// 1ro. van lo de la carpeta utilities
+@import "./utilities/variables";
+
+// 2do  van lo de la carpeta base
+@import "./base/reset";
+
+@import "./layout/body";
+@import "./layout/header";
+@import "./layout/main";
+@import "./layout/footer";  
+
+// ultimo lugar van los media query  --
+// orden para min-width: 440; 576; 768; 992; 
+@import "./layout/media/media440";
+@import "./layout/media/media576";
+@import "./layout/media/media768";
+@import "./layout/media/media992";
+
