@@ -1,11 +1,10 @@
  /** ========================================================
  * 
- * Java script para pagina hbCajaAhorroPesos.html
+ * @description Entrega final. JS desde hbCajaAhorroPesos.html - Proyecto de Home banking
  * CoderHouse Comisión 86620 - año 2025
- * Proyecto de Home banking - inicial Cambio de divisas
+ * Pagina de Caja de ahorros 
  *
  * @author Carlos A. santa Cruz 
- * @description Entrega final. JS desde index.html - Proyecto de Home banking
  *  
  * Las funciones no están habilitadas aún, se habilitarán en futuras entregas
  *
@@ -29,11 +28,11 @@
 
 
 function inicio() {
-    // 0. Verificar si hay un usuario activo
+    // Verificar si hay un usuario activo
     // Si no existe, lo redirijo al index.html
-            verificaUsuarioActivo();
+    verificaUsuarioActivo();
             
-    // coloco la fecha y hora al pié de la página. Uso librería Luxon
+    // coloco la fecha y hora al pié de la página. Uso biblioteca externa Luxon
     fechaYhoraConLuxon()
 
 } // fin de la función inicio()
@@ -41,7 +40,7 @@ function inicio() {
 
     // =========================================================
     //
-    // 0. Verificar si hay un usuario activo
+    // Verificar si hay un usuario activo
     //
     // =========================================================
 function verificaUsuarioActivo(){
@@ -82,7 +81,7 @@ function verificaUsuarioActivo(){
     // =========================================================
 
     
-// mensaje de aviso al usuario con la librería SweetAlert2
+// mensaje de aviso al usuario con la biblioteca externa SweetAlert2
 // lo muestra cuando oprime el botón de "Depositar" o "Transferir"
 function MensajeDeAvisoConSweetAlert() {
     Swal.fire({

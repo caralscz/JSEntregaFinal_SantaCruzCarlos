@@ -25,6 +25,8 @@ async function leerTBUsuariosJSON() {
     if (Encontro) {
         msgError.style.display = "none"; // Ocultar el mensaje de error al usuario
     } else {
+        ErrorFatal = true; // Se produjo un error fatal
+        sessionStorage.setItem(clErrorFatal,true); // mensaje de error fatal
         msgError.style.display = "block"; // Mostrar el msgError
     }
     return Encontro; // Devuelve el resultado de la búsqueda

@@ -20,8 +20,8 @@ El proyecto tiene 4 HTML: <br>
 En la entrega final se implementan las funciones de las páginas<br>
 en Java Script para cumplir la consigna:
 - Que el JS interactúe con HTML, por ejemplo los formularios y botones de servicios<br>
-- Se usa la librería luxon.js para colocar la fecha al pié de página.<br>
-- Se usa la librería sweetalert2 para mostrar los mensajes de error en el formulario de identificacion.<br>
+- Se usa la biblioteca externa luxon.js para colocar la fecha al pié de página.<br>
+- Se usa la biblioteca externa sweetalert2 para mostrar los mensajes de error en el formulario de identificacion.<br>
 - Se leen archivos .json para simular la lectura de una DB, tanto para usuarios como para monedas.<br> 
 - Se usan variables de sessionStorage para guardar el usuario identificado ylos archivos .json leidos para ser utilizado durante toda la session.<br>
 

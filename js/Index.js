@@ -1,16 +1,17 @@
 /** ========================================================
  * 
- * Java script para pagina index.html
+ * Funciones ejecutadas desde la página index.html 
+ * 
  * CoderHouse Comisión 86620 - año 2025
  * @author Carlos A. santa Cruz
  *
  * @description Entrega final. JS desde index.html - Proyecto de Home banking
  *  
- * Funciones ejecutadas desde la página index.html
- * 
- *  Funciones JavaScript implementadas:
+ * Algunas funciones JavaScript implementadas:
  * @funcion inicio() se ejecuta al cargar la página index.html
  *      - Se inicializan las variables de sessionStorage y se verifica si hay una sesión activa
+ *      - Se cargan las tablas de usuarios y divisas desde un JSON
+ * 
  *  @function ValidarUnUsuario() se inicia cuando se hace click en el botón "Continuar" 
  *      del formulario de identificación donde se pide el nombre de usuario y password    
  *  @function VerificoUsuarioPassword verifica que sean correctos el usuario y password
@@ -30,6 +31,7 @@ let TbUsuarioPw = [];   // array de usuarios, password , persona, ... existentes
 let UsuarioActivo;      // variable para guardar el nombre de usuario válido
 let RecordarUsuario;    // variable para recordar el nombre de usuario válido
 let NombrePersona;      // nombre de la persona que se loguea
+let ErrorFatal = false ; // variable para guardar el mensaje de error fatal
 
 const urlDBUsuariosJSON = './json/DBUsuarios.json'; // url del archivo JSON de usuarios 
 const urlDBDivisasJSON = './json/DBDivisas.json'; // url del archivo JSON de divisas 
@@ -40,6 +42,7 @@ const clTbUsuarioPw = "TbUsuarioPw";   // tabla de usuarios,password, persona, s
 const clUsuarioActivo = "UsuarioActivo";  // usuario activo
 const clRecordarUsuario = "RecordarUsuario"; // recordar el usuario
 const clNombrePersona = "NombrePersona"; // nombre de la persona que se loguea
+const clErrorFatal = "idErrorFatal"; // id del mensaje de error
 
 // ***
 // Llama a la función cuando la página se carga
@@ -57,8 +60,21 @@ async function Inicio() {
     * ======================================================== 
     
     **/
+    ErrorFatal = sessionStorage.getItem(clErrorFatal); // rescato el mensaje de error fatal
+    
+    if (ErrorFatal) {
+        // Si hay un error fatal, no se puede continuar
+        titleVar = 'Error fatal en la aplicación';
+        textVar = 'Avise al administrador !!';
+        iconVar = "error";  // warning, error, success, info, and question,
+        backgroundVar = '#880000', // color de fondo
+        MensajeDeSweetAlert(titleVar, textVar, iconVar,backgroundVar)  // Mando un mensaje de error al usuario con sweetAlert
+        event.preventDefault(); // Evita que el formulario se envíe
+        return false;
+    }
 
-    // coloco la fecha y hora al pié de la página. Uso librería Luxon
+
+    // coloco la fecha y hora al pié de la página. Uso biblioteca externa Luxon
     fechaYhoraConLuxon()
 
     // ======================================================== 
@@ -82,6 +98,7 @@ async function Inicio() {
         // 
 
         // Llamo a la función que lee el JSON y carga la tabla de usuarios
+        // (está en otro archivo .js)
         TbUsuarioPw = await leerTBUsuariosJSON(); // TbUsuarioPw = [] (usuarios, password, productos,... válidos)
 
         // Convierto el array a una cadena JSON antes de guardarlo
@@ -107,6 +124,7 @@ async function Inicio() {
         // 
 
         // Llamo a la función que lee el JSON y carga la tabla de divisas (está en otro archivo .js)
+        // (está en otro archivo .js)
         TbDivisas = await leerTBDivisasJSON(); // TbDivisas = [] (moneda,tipo,compra,venta, ... válidos)
 
         // Convierto el array a una cadena JSON antes de guardarlo
@@ -130,7 +148,7 @@ async function Inicio() {
         // ***
         // coloco el nombre del usuario bajo el titulo a la derecha
         let usuarioIdentificado = document.getElementById("idUsuarioIdentificado");
-        usuarioIdentificado.innerHTML = " ;Usuario: " + NombrePersona; //UsuarioActivo;
+        usuarioIdentificado.innerHTML = "Usuario:  " + NombrePersona; //UsuarioActivo;
 
     } else {
         nombreUsuarioInput.value = "";  // Borra lo que haya en el input de nombre de usuario
@@ -143,26 +161,18 @@ async function Inicio() {
     // aquí tratamos el botoncito con el signo de pregunta que dice "ayuda" 
     // es el que está al lado del usuario en el formulario
 
-    // Seleccionar la imagen
-    const iconoAyuda = document.querySelector('.iconoAyuda');
-
-    // Guardar la ruta de la imagen original
-    const imagenOriginal = './assets/img/questionmarkcircleoutline_110819.png';
-    // Ruta de la imagen al pasar el mouse
-    const imagenHover = './assets/img/questionmarkcircle_110957.png';
-
-    // Cambiar la imagen cuando el mouse pasa sobre ella
-    iconoAyuda.addEventListener('mouseover', function () {
+    const iconoAyuda = document.querySelector('.iconoAyuda');                    // Seleccionar la imagen
+    const imagenOriginal = './assets/img/questionmarkcircleoutline_110819.png';  // Guardar la ruta de la imagen original
+    const imagenHover = './assets/img/questionmarkcircle_110957.png';            // Ruta de la imagen al pasar el mouse
+    iconoAyuda.addEventListener('mouseover', function () {                       // Cambiar la imagen cuando el mouse pasa sobre ella
         this.src = imagenHover;
     });
 
-    // Restaurar la imagen original cuando el mouse sale
-    iconoAyuda.addEventListener('mouseout', function () {
+    iconoAyuda.addEventListener('mouseout', function () {                        // Restaurar la imagen original cuando el mouse sale
         this.src = imagenOriginal;
     });
 
-    // Añadir el evento de clic para llamar a mostrarAyuda()
-    iconoAyuda.addEventListener('click', function () {
+    iconoAyuda.addEventListener('click', function () {                           // Añadir el evento de clic para llamar a mostrarAyuda()
         MensajeDeAyudaConSweetAlert();
     });
 
@@ -184,10 +194,21 @@ function ValidarUnUsuario() {
     *
     * ======================================================== **/
 
+    if (ErrorFatal) {
+        // Si hay un error fatal, no se puede continuar
+        titleVar = 'Error fatal en la aplicación';
+        textVar = 'Avise al administrador !!';
+        iconVar = "error";  // warning, error, success, info, and question,
+        backgroundVar = '#880000', // color de fondo
+        MensajeDeSweetAlert(titleVar, textVar, iconVar,backgroundVar)  // Mando un mensaje de error al usuario con sweetAlert
+        event.preventDefault(); // Evita que el formulario se envíe
+        return false;
+    }
+
     if (ControlarUsuarioPassword()) {     // voy a controlar el usuario y password
         // si el usuario y password son correctos
         // Borro el mensaje de error al usuario y 
-        // Hago visible los botones de ingresar a los servicios
+        // Hago posible ingresar a los servicios
         HabilitarServicios(true);
 
         return true; // todo ok
@@ -200,7 +221,11 @@ function ValidarUnUsuario() {
         HabilitarServicios(false);
 
         // Mando un mensaje de error al usuario con sweetAlert
-        MensajeDeSweetAlert()
+        titleVar = 'Debe ingresar un nombre de usuario y password válidos';
+        textVar = 'En los comentarios mas abajo,  hay una lista para esta prueba!';
+        iconVar = "error";  // warning, error, success, info, and question,
+        backgroundVar = '#006600', // color de fondo
+        MensajeDeSweetAlert(titleVar, textVar, iconVar,backgroundVar); 
 
         return false; // algo está mal
 
@@ -219,6 +244,7 @@ function ControlarUsuarioPassword() {
      * La tabla TbUsuarioPw = [] (usuarios y password válidos) se carga en la función Inicio()
      *
      * ======================================================== **/
+
     // rescato los valores ingresados por el usuario en el formulario
     // y los guardo en las variables nombreUsuario y clave
     const nombreUsuario = document.getElementById("idNombreUsuario").value;
@@ -239,15 +265,15 @@ function ControlarUsuarioPassword() {
 } // Fin de la función ControlarUsuarioPassword
 // ======================================================== 
 
-// mensaje de error al usuario con la librería SweetAlert2
+// mensaje de error al usuario con la biblioteca externa SweetAlert2
 // lo muestra cuando el usuario y/o la password son incorrectos
-function MensajeDeSweetAlert() {
+function MensajeDeSweetAlert(titleVar, textVar, iconVar,backgroundVar) {
     Swal.fire({
-        title: 'Debe ingresar un nombre de usuario y password válidos',
-        text: 'En los comentarios mas abajo,  hay una lista para esta prueba!',
-        icon: "error",  // warning, error, success, info, and question,
+        title: titleVar, // 'Debe ingresar un nombre de usuario y password válidos',
+        text: textVar, // 'En los comentarios mas abajo,  hay una lista para esta prueba!',
+        icon: iconVar,//  "error",  // warning, error, success, info, and question,
         theme: 'dark', // tema de la ventana: 'light', 'dark', 'auto', and 'borderless'
-        background: '#006600', // color de fondo
+        background: backgroundVar, //  '#006600', // color de fondo
         position: 'top', // posición de la ventana: 'top', 'top-start', 'top-end', 'center', 'center-start', 'center-end', 'bottom', 'bottom-start', and 'bottom-end' 
         draggable: true,  // se puede mover el mensaje con el mouse
         confirmButtonText: 'ok'
@@ -255,7 +281,7 @@ function MensajeDeSweetAlert() {
 
 } // Fin de la funcion MensajeDeSweetAlert
 
-// mensaje de error al usuario con la librería SweetAlert2
+// mensaje de error al usuario con la biblioteca externa SweetAlert2
 // lo muestra cuando el usuario y/o la password son incorrectos
 function MensajeDeAyudaConSweetAlert() {
     Swal.fire({

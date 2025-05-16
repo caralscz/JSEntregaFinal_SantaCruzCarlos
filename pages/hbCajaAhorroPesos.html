@@ -16,7 +16,7 @@
     <link rel="icon" href="../banco.ico" type="image/x-icon">
 
     <title>JavaScript CoderHouse Entrega final | Home Banking | Caja de ahorros en pesos</title>
-    
+
     <!-- estilos css de sweetalert para cartel de aviso -->
     <link rel="stylesheet" href="../css/sweetalert2.min.css">
 
@@ -68,16 +68,19 @@
 
             <div class="columnaDerecha2">
                 <h2>Transferencias</h2>
-                <form  onclick="MensajeDeAvisoConSweetAlert()"  id="formularioTransferencias" class="formularioTransferencias"> <!-- action="#" method="get"  -->
+                <form onclick="MensajeDeAvisoConSweetAlert()" id="formularioTransferencias"
+                    class="formularioTransferencias"> <!-- action="#" method="get"  -->
                     <label for="idCuentaDestino">Cuenta destino</label>
                     <select name="cuentaDestino" id="idCuentaDestino">
                         <option value="cajaAhorro">Caja de Ahorro en Pesos</option>
-                        <option value="cuentaCorriente">Cuenta Corriente</option>
+                        <option value="cajaAhorro">Caja de Ahorro en Dolares</option>
+                        <option value="cajaAhorro">Caja de Ahorro en Euros</option>
+                        <option value="cuentaCorriente">Cuenta Corriente en Pesos</option>
                     </select><br>
-                    <label for="idMonto">Monto</label>
-                    <input type="number" id="idMonto" name="txtMonto" placeholder="Ingrese el monto a transferir:"><br>
+                    <label for="idMonto">Importe</label>
+                    <input type="number" id="idMonto" name="txtMonto" placeholder="Ingrese importe a transferir:"><br>
                 </form>
-                    <button   onclick="MensajeDeAvisoConSweetAlert()" id="id_botonTransferirCuenta">Transferir</button><br>
+                <button onclick="MensajeDeAvisoConSweetAlert()" id="id_botonTransferirCuenta">Transferir</button><br>
             </div>
 
         </section>
@@ -110,7 +113,7 @@
     <script src="../js/sweetalert2.all.min.js"></script>
 
     <!-- Mis Java Script -->
-    <script src="../js/fechaYhoraLuxon.js">  </script>     
+    <script src="../js/fechaYhoraLuxon.js">  </script>
     <script src="../js/hbCajaAhorroScript.js"></script>
 
 

@@ -30,6 +30,8 @@ async function leerTBDivisasJSON() {
             // Confirmar que se ha guardado
             return TbDivisas; // Retornar la tabla JavaScript
         } catch (error) {
+            ErrorFatal = true; // Se produjo un error fatal
+            sessionStorage.setItem(clErrorFatal,true); // mensaje de error fatal
             msgError3.style.display = "block"; // Mostrar el msgError
         }
       }

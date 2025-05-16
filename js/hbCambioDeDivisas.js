@@ -10,10 +10,11 @@
  * 
  * Este script permite realizar operaciones de compra y venta de 
  * monedas extranjeras (Dólar y Euro) utilizando Pesos Argentinos (AR$).
+ * Las divisas existentes, asi como sus cotizaciones fueron leídas desde un archivo .json en index.js
  * 
  * Proceso:
  * . Verifica si hay un usuario activo, si no lo hay redirige a index.html
- * . Obtiene las tasas de cambio desde la tabla TbDivisas cargada en sessionStorage
+ * . Obtiene las tasas de cambio desde la tabla TbDivisas cargada en sessionStorage en LeeDBDivisasJSON.js
  * . Permite al usuario seleccionar la moneda con la que desea operar
  * . Permite elegir entre comprar o vender dicha moneda
  * . Solicita la cantidad a operar
@@ -49,8 +50,8 @@ function inicio() {
 
     // Control de seguridad. Verificar si hay un usuario activo
     verificaUsuarioActivo();  // si NO hay, regresa a inicio.html 
-    
-    // coloco la fecha y hora al pié de la página. Uso librería Luxon
+
+    // coloco la fecha y hora al pié de la página. Uso biblioteca externa Luxon
     fechaYhoraConLuxon()
 
     // Llama a la función para iniciar el sistema de monedas
@@ -89,7 +90,7 @@ function CalcularCambioDivisas() {
     // salvo que el usuario haga click en la funcion de salida
     event.preventDefault(); // Evita que el formulario se envíe
 
-    MensajeDeAvisoOkConSweetAlert(mensajeFinal,TodoBien)
+    MensajeDeAvisoOkConSweetAlert(mensajeFinal, TodoBien)
 
 } // fin de la función CalcularCambioDivisas()
 // =========================================================
@@ -119,16 +120,16 @@ function LeerValoresDelFormulario() {
     // 4. Calcular el resultado final de la operación
     return (calcularResultado(monedaElegida, tipoOperacion, cantidad));
 }
-   
-// mensaje de aviso al usuario con la librería SweetAlert2
+
+// mensaje de aviso al usuario con la biblioteca externa SweetAlert2
 // lo muestra cuando puede realizar un cambio de divisas
-function MensajeDeAvisoOkConSweetAlert(mensaje,ok) {
-    let iconVal = ok ? "info" : "error" ;
-    let colorVal = ok ? "#000099" : "#990000" ;
+function MensajeDeAvisoOkConSweetAlert(mensaje, ok) {
+    let iconVal = ok ? "info" : "error";
+    let colorVal = ok ? "#000099" : "#990000";
     Swal.fire({
         title: 'Cambio de divisas a realizar',
-        html:mensaje,
-        icon:iconVal,  // warning, error, success, info, and question,
+        html: mensaje,
+        icon: iconVal,  // warning, error, success, info, and question,
         theme: 'dark', // tema de la ventana: 'light', 'dark', 'auto', and 'borderless'
         background: colorVal,  //'#000099', // color de fondo
         position: 'top-end', // posición de la ventana: 'top', 'top-start', 'top-end', 'center', 'center-start', 'center-end', 'bottom', 'bottom-start', and 'bottom-end' 
@@ -137,7 +138,7 @@ function MensajeDeAvisoOkConSweetAlert(mensaje,ok) {
     });
 
 } // Fin de la funcion MensajeDeAvisoOkConSweetAlert
-    
+
 // =========================================================
 //
 // Verificar si hay un usuario activo
@@ -193,45 +194,6 @@ function obtenerTasasCambio() {
     // Agregamos los div necesarios para las divisas
     TbDivisas.forEach(agregarNuevaDivisa);
 
-    /*
-        let lista = document.getElementById('lista');
-        let nuevoItem = document.createElement('li');
-        nuevoItem.textContent = 'Nuevo ítem';
-        lista.appendChild(nuevoItem);
-     
-     // Hacer así dice que tiene riezgos de seguridad, ya que el usuario 
-     // puede inyectar código malicioso en el HTML. Pero en realidads es más fácil de usar
-     // y no es necesario crear cada uno de los elementos por separado.
-     function agregarNuevaDivisaConInnerHTML() {
-      // 1. Obtiene el elemento padre donde se agregará la nueva divisa
-      const contenedorCambioDivisas = document.querySelector('.cambioDivisas');
-      // 2. Crea la cadena HTML para el nuevo div
-      const nuevoHTML = '<div class="cambioDivisasUna"><h3>Dólar</h3><p>Compra: ...</p></div>';
-      // 3. Agrega el HTML al contenedor
-      contenedorCambioDivisas.innerHTML += nuevoHTML;
-    }
-    */
-    /*  
-    * Sintaxis de objetos: 
-     * La sintaxis { clave1: valor1, clave2: valor2, ... } se utiliza para crear objetos literales.
-     * clave1, clave2, etc., son los nombres de las propiedades.
-     * valor1, valor2, etc., son los valores asignados a esas propiedades.
-     * En la función obtenerTasasCambio() se usaba esta sintaxis, 
-     *      creamos un objeto que tiene dos propiedades: dolar y euro. 
-     *      Cada una de estas propiedades es, a su vez, otro objeto 
-     *      con las propiedades compra y venta.
-     * Esto no es necesario porque ya están disponibles en TbDivisas
-        return {
-            dolar: {
-                compra: parseFloat(document.getElementById("idCompraDolar").innerText),
-                venta: parseFloat(document.getElementById("idVentaDolar").innerText)
-            },
-            euro: {
-                compra: parseFloat(document.getElementById("idCompraEuro").innerText),
-                venta: parseFloat(document.getElementById("idVentaEuro").innerText)
-            }
-        };
-    */
 }
 
 function agregarNuevaDivisa(UnaMoneda, index) {
@@ -393,7 +355,6 @@ function calcularResultado(moneda, operacion, cantidad) {
 
     // Preparar mensaje según tipo de operación
     if (operacion === "comprar") {
-
         mensajeFinal = mensajeFinal + `Para comprar ${cantidad} ${monedaNombre},<br> deberá depositar AR$ ${montoTotal.toFixed(2)}`;
     } else { // vender
         mensajeFinal = mensajeFinal + `Por vender ${cantidad} ${monedaNombre},<br> recibirá AR$ ${montoTotal.toFixed(2)}`;

@@ -31,7 +31,7 @@ Inicio();
 // =========================================================
 function Inicio() {
     
-    // coloco la fecha y hora al pié de la página. Uso librería Luxon
+    // coloco la fecha y hora al pié de la página. Uso biblioteca externa Luxon
     fechaYhoraConLuxon()
 
     // Miramos si hay una session válida activa, para lo cual la variable de sessionStorage
